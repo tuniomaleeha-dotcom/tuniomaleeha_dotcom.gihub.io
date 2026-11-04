@@ -1,0 +1,1001 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maleeha Tunio | Personal Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --purple: #8664d8;
+    --deep: #50358c;
+    --pink: #f5d9eb;
+    --light: #faf7ff;
+    --text: #302844;
+    --muted: #777086;
+    --white: #ffffff;
+    --shadow: 0 15px 45px rgba(80,53,140,.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #eee6f8;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 17px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--deep);
+    font-weight: 800;
+}
+
+.logo span {
+    color: #d58abd;
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    color: #625a70;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 27px;
+    color: var(--deep);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    padding: 145px 7% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: slideLeft 1s ease;
+}
+
+.small-tag {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #f1e6ff;
+    color: var(--deep);
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 6vw, 76px);
+    line-height: 1.13;
+    margin-bottom: 20px;
+    color: #33264e;
+}
+
+.hero h1 span {
+    color: var(--purple);
+}
+
+.hero-content p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 16px;
+    max-width: 560px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 26px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.btn-primary {
+    color: white;
+    background: linear-gradient(135deg, #9878e8, #6846b5);
+    box-shadow: 0 9px 25px rgba(104,70,181,.25);
+}
+
+.btn-outline {
+    color: var(--deep);
+    border: 1px solid #cbb8e9;
+    background: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.hero-image {
+    position: relative;
+    width: 370px;
+    height: 450px;
+    flex-shrink: 0;
+    animation: slideRight 1s ease;
+}
+
+.image-bg {
+    position: absolute;
+    inset: 15px -15px -15px 15px;
+    background: linear-gradient(145deg, #eac8e6, #bba5ed);
+    border-radius: 45% 45% 25px 25px;
+    transform: rotate(4deg);
+}
+
+.hero-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 45% 45% 25px 25px;
+    border: 8px solid white;
+    box-shadow: var(--shadow);
+}
+
+.floating-card {
+    position: absolute;
+        bottom: 35px;
+    left: -55px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--deep);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 95px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading small {
+    color: var(--purple);
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 45px);
+    margin-top: 12px;
+    color: var(--deep);
+}
+
+.section-heading p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+    background: white;
+}
+
+.about-container {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-decoration {
+    min-height: 330px;
+    border-radius: 25px;
+    background: linear-gradient(140deg, #eee1ff, #fbe3f0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 105px;
+    position: relative;
+}
+
+.about-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--deep);
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 14px;
+}
+
+.about-label {
+    display: inline-block;
+    background: #f5edff;
+    color: var(--deep);
+    padding: 10px 15px;
+    border-radius: 9px;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* EDUCATION */
+
+.education {
+    background: #f8f4ff;
+}
+
+.cards {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: .3s;
+    border: 1px solid #f1eafa;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(80,53,140,.15);
+}
+
+.card-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #f1e8ff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--deep);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+/* SKILLS */
+
+.skills {
+    background: white;
+}
+
+.skills-container {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-box {
+    padding: 25px;
+    background: #fbf9ff;
+    border: 1px solid #eee6f8;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: .3s;
+}
+
+.skill-box:hover {
+    transform: translateX(5px);
+    border-color: #c6afea;
+}
+
+.skill-icon {
+    font-size: 30px;
+}
+
+.skill-box h3 {
+    color: var(--deep);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.skill-box p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* LEARNING */
+
+.learning {
+    background: linear-gradient(135deg, #f0e8ff, #fcebf5);
+}
+
+.learning-box {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.learning-icon {
+    font-size: 65px;
+    background: #f4eaff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.learning-box h3 {
+    color: var(--deep);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.learning-box p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* GOALS */
+
+.goals {
+    background: white;
+}
+
+.goal-box {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    background: linear-gradient(135deg, #f3eaff, #fff0f8);
+    padding: 55px 35px;
+    border-radius: 25px;
+}
+
+.goal-box .goal-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
+}
+
+.goal-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--deep);
+    margin-bottom: 15px;
+}
+
+.goal-box p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* PROJECT */
+
+.projects {
+    background: #f8f4ff;
+}
+
+.project-card {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.project-card .project-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    color: var(--deep);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: white;
+}
+
+.contact-content {
+    max-width: 700px;
+    text-align: center;
+    margin: auto;
+}
+
+.contact-content p {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #33264e;
+    padding: 35px 7%;
+    text-align: center;
+    color: white;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #d5c9e8;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* BACK TO TOP */
+
+.top-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: var(--shadow);
+    display: none;
+    z-index: 500;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(35px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 125px;
+        gap: 45px;
+    }
+
+    .hero-content p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 290px;
+        height: 350px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        box-shadow: var(--shadow);
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .cards,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .floating-card {
+        left: -15px;
+    }
+
+    .hero-image {
+        width: 260px;
+        height: 320px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <a href="#home" class="logo">Maleeha<span>.</span></a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#education" onclick="closeMenu()">Education</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#learning" onclick="closeMenu()">Learning</a>
+        <a href="#goals" onclick="closeMenu()">Goals</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+</nav>
+</header>
+
+<!-- HOME -->
+
+<main>
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <span class="small-tag">WELCOME TO MY PORTFOLIO ✨</span>
+
+        <h1>Hello, I'm<br><span>Maleeha Tunio</span></h1>
+
+        <p>
+            A passionate student who believes in learning, growing,
+            and creating a successful future. I am currently studying
+            AD Science Part 2 and working towards my dream of becoming
+            a good Zoologist.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary">Discover More →</a>
+            <a href="#education" class="btn btn-outline">My Education</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <div class="image-bg"></div>
+        <img src="girl-niqab.jpeg" alt="Maleeha Tunio portrait"
+             onerror="this.style.display='none'; this.parentElement.style.background='#eee1ff'; this.parentElement.style.borderRadius='45% 45% 25px 25px'; this.parentElement.innerHTML += '<div style=\'position:absolute;inset:0;display:grid;place-items:center;font-size:80px\'>🌸</div>';">
+        <div class="floating-card">🌷 Dream • Learn • Grow</div>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-heading">
+        <small>GET TO KNOW ME</small>
+        <h2>About Me</h2>
+        <p>A little introduction about my journey and personality.</p>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-decoration">🌸</div>
+
+        <div class="about-text">
+            <h3>My Story</h3>
+
+            <p>
+                My name is Maleeha Tunio. I am a student of
+                AD Science Part 2 at Degree College.
+                I believe that education is one of the most
+                important ways to build a bright future.
+            </p>
+
+            <p>
+                I enjoy learning new things and improving my
+                knowledge. I have completed different courses
+                to develop my skills and I am also exploring
+                the world of Artificial Intelligence.
+            </p>
+
+            <p>
+                This portfolio has been created with the help
+                of Artificial Intelligence to present my
+                educational journey, skills, and future goals.
+            </p>
+
+            <span class="about-label">✨ Always Learning & Improving</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="education" id="education">
+
+    <div class="section-heading">
+        <small>MY ACADEMIC JOURNEY</small>
+        <h2>Education & Qualifications</h2>
+        <p>My education and completed learning courses.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🎓</div>
+            <h3>AD Science Part 2</h3>
+            <p>
+                Currently studying AD Science Part 2
+                at Degree College.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Diploma in Information Technology</h3>
+            <p>
+                Completed Diploma in Information Technology (DIT).
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📱</div>
+            <h3>Mobile Application Development</h3>
+            <p>
+                Completed a course in Mobile Application Development.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>English Language Course</h3>
+            <p>
+                Completed an English Language Course to improve
+                language knowledge.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI for Everyone</h3>
+            <p>
+                Currently learning AI for Everyone to enhance
+                my knowledge of Artificial Intelligence.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <div class="section-heading">
+        <small>WHAT I HAVE LEARNED</small>
+        <h2>My Skills</h2>
+        <p>Skills and areas I have studied.</p>
+    </div>
+
+    <div class="skills-container">
+
+        <div class="skill-box">
+            <span class="skill-icon">💻</span>
+            <div>
+                <h3>Information Technology</h3>
+                <p>Diploma in Information Technology (DIT).</p>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <span class="skill-icon">📱</span>
+            <div>
+                <h3>Mobile Application Development</h3>
+                <p>Course in mobile application development.</p>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <span class="skill-icon">🗣️</span>
+            <div>
+                <h3>English Language</h3>
+                <p>English language course.</p>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <span class="skill-icon">🤖</span>
+            <div>
+                <h3>Artificial Intelligence</h3>
+                <p>Currently learning AI for Everyone.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- LEARNING -->
+
+<section class="learning" id="learning">
+
+    <div class="section-heading">
+        <small>CONTINUOUS DEVELOPMENT</small>
+        <h2>Currently Learning</h2>
+        <p>Knowledge is a journey that never ends.</p>
+    </div>
+
+    <div class="learning-box">
+        <div class="learning-icon">🤖</div>
+
+        <div>
+            <h3>AI for Everyone</h3>
+            <p>
+                I am currently learning AI for Everyone to
+                enhance my knowledge and understand the
+                exciting world of Artificial Intelligence.
+                I believe continuous learning helps us
+                become better every day.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- GOALS -->
+
+<section class="goals" id="goals">
+
+    <div class="section-heading">
+        <small>MY VISION</small>
+        <h2>Future Goals</h2>
+        <p>Every big achievement starts with a dream.</p>
+    </div>
+
+    <div class="goal-box">
+        <div class="goal-icon">🦋</div>
+
+        <h3>My Dream, My Future</h3>
+
+        <p>
+            My dream is to be successful in my life and
+            become a good Zoologist. I want to continue
+            learning, improve my knowledge, and work hard
+            to achieve my goals.
+        </p>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <div class="section-heading">
+        <small>MY WORK</small>
+        <h2>Projects & Practice Work</h2>
+        <p>A space to showcase my learning journey.</p>
+    </div>
+
+    <div class="project-card">
+        <div class="project-icon">🌷</div>
+        <h3>My Personal Portfolio Website</h3>
+        <p>
+            A personal portfolio website created with the
+            help of Artificial Intelligence to present my
+            education, qualifications, skills, and future goals.
+        </p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-heading">
+        <small>LET'S CONNECT</small>
+        <h2>Contact Me</h2>
+    </div>
+
+    <div class="contact-content">
+        <p>
+            Thank you for visiting my personal portfolio.
+            I appreciate your time and interest in learning
+            about my educational journey and future goals.
+        </p>
+
+        <a href="#home" class="btn btn-primary">Back to Home ↑</a>
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <h3>Maleeha Tunio ✨</h3>
+    <p>Personal Student Portfolio</p>
+    <p>Created with the help of Artificial Intelligence.</p>
+    <p>© 2026 Maleeha Tunio. All Rights Reserved.</p>
+</footer>
+
+<button class="top-btn" id="topBtn" onclick="goTop()" aria-label="Back to top">↑</button>
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closeMenu() {
+    document.getElementById("navLinks").classList.remove("active");
+}
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+    } else {
+        topBtn.style.display = "none";
+    }
+});
+
+function goTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
